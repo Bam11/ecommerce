@@ -1,12 +1,13 @@
+import { Route, Routes } from 'react-router'
 import Home from './pages/home'
 import './App.css'
 
 function App() {
 
   return (
-    <>
-      <Home />
-    </>
+    <Routes>
+      <Route index element={<Home />}></Route>
+    </Routes>
   )
 } 
 
