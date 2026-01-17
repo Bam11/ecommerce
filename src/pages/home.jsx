@@ -5,6 +5,8 @@ import './home.css'
 export default function Home() {
   return (
     <div>
+      <title>E-Commerce</title>
+      
       <div className="header">
         <div className="left-section">
           <a href="index.html" className="header-link">
