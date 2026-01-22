@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import Header from '../../components/header'
-import { products } from '../../lib/products'
+// import { products } from '../../lib/products'
 import './home.css'
 
 export default function Home() {
+  // fetch("http://localhost:3000/api/products") getting data from backend using fetch
+  //   .then((response)=>{
+  //     response.json().then((data)=>{
+  //       data
+  //     })
+  //   })
+  const [products, setProducts] = useState([]);
+
+  useEffect(()=>{
+    axios.get("http://localhost:3000/api/products")
+      .then((response)=>{
+        setProducts(response.data);
+      }) 
+  },[])
+    
+
   return (
     <div>
       <title>E-Commerce</title>
