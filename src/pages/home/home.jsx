@@ -4,7 +4,7 @@ import Header from '../../components/header'
 // import { products } from '../../lib/products'
 import './home.css'
 
-export default function Home() {
+export default function Home({cart}) {
   // fetch("http://localhost:3000/api/products") getting data from backend using fetch
   //   .then((response)=>{
   //     response.json().then((data)=>{
@@ -12,21 +12,14 @@ export default function Home() {
   //     })
   //   })
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
 
   useEffect(()=>{
     axios.get("/api/products")
       .then((response)=>{
         setProducts(response.data);
       }) 
-
-    axios.get("/api/cart-items")
-      .then((res)=>{
-        setCart(res.data);
-      })
   },[])
     
-
   return (
     <div>
       <title>E-Commerce</title>
