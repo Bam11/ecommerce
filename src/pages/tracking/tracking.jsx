@@ -1,19 +1,20 @@
 import React from 'react'
-import Header from '../components/header'
+import Header from '../../components/header'
 import './tracking.css'
 
 export default function Tracking() {
   return (
     <div>
       <title>Tracking</title>
+      <link rel="icon" type="image/svg+xml" href="/images/tracking-favicon.png" />
       
       <Header />
 
       <div className="tracking-page">
         <div className="order-tracking">
-          <a className="back-to-orders-link link-primary" href="/orders">
+          <Link className="back-to-orders-link link-primary" href="/orders">
             View all orders
-          </a>
+          </Link>
 
           <div className="delivery-date">
             Arriving on Monday, June 13

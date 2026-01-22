@@ -65,6 +65,7 @@
   margin-left: 10px;
   margin-right: 10px;
   display: flex;
+  align-items: center;
 }
 
 .header .search-bar {
@@ -74,6 +75,8 @@
   height: 38px;
   padding-left: 15px;
   border: none;
+  background-color: white;
+  color: gray;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 0;
@@ -110,6 +113,10 @@
   align-items: center;
   padding-left: 13px;
   padding-right: 13px;
+}
+
+.header .orders-link:active {
+  text-decoration: underline;
 }
 
 .header .orders-text {
