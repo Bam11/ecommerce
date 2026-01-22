@@ -15,12 +15,12 @@ export default function Home() {
   const [cart, setCart] = useState([]);
 
   useEffect(()=>{
-    axios.get("http://localhost:3000/api/products")
+    axios.get("/api/products")
       .then((response)=>{
         setProducts(response.data);
       }) 
 
-    axios.get("http://localhost:3000/api/cart-items")
+    axios.get("/api/cart-items")
       .then((res)=>{
         setCart(res.data);
       })
