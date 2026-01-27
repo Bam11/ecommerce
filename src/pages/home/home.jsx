@@ -5,7 +5,7 @@ import Header from '../../components/header'
 import './home.css'
 import ProductGrid from './product-grid';
 
-export default function Home({ cart }) {
+export default function Home({ cart, loadCart }) {
   // fetch("http://localhost:3000/api/products") getting data from backend using fetch
   //   .then((response)=>{
   //     response.json().then((data)=>{
@@ -30,7 +30,7 @@ export default function Home({ cart }) {
 
       <Header cart={cart} />
       <div className="home-page">
-        <ProductGrid products={products} />
+        <ProductGrid products={products} loadCart={loadCart} />
       </div>
     </div>
   )
