@@ -4,6 +4,7 @@ import { formatMoney } from '../../utils/money';
 
 export default function Product({ product, loadCart }) {
   const [quantity, setQuantity] = useState(1);
+  const [cartAlert, setCartAlert] = useState(false);
 
   const addToCart = async () => {
     await axios.post("/api/cart-items", {
@@ -11,6 +12,11 @@ export default function Product({ product, loadCart }) {
       quantity
     });
     await loadCart();
+
+    setCartAlert(true);
+    setTimeout(() => {
+      setCartAlert(false)
+    }, 2000);
   }
 
   const handleQuantity = (e) => {
@@ -61,7 +67,9 @@ export default function Product({ product, loadCart }) {
 
       <div className="product-spacer"></div>
 
-      <div className="added-to-cart">
+      <div className="added-to-cart"
+        style={{ opacity: cartAlert ? 1 : 0 }}
+      >
         <img src="images/icons/checkmark.png" />
         Added
       </div>
